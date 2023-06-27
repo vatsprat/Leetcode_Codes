@@ -2,8 +2,29 @@ class Solution {
 public:
     int strStr(string haystack, string needle) 
     { 
-        int a = haystack.find(needle);
+       int m = haystack.size();
+       int n = needle.size();
+       int j=0;
 
-        return a;  
-    }
+       for(int i=0;i<=m-n;i++)
+       {
+           for(j=0;j<n;j++)
+           {
+               if(haystack[i+j]!=needle[j])
+               {
+                   break;
+               }
+
+           }
+
+           if(j==n)
+           {
+               return i;
+           }
+       }
+
+
+        return -1;
+        }
+    
 };
